@@ -6,13 +6,13 @@
 >
     <servers>
         <server>
-            <username>${env.MAVEN_REPO_READER_USERNAME}</username>
-            <password>${env.MAVEN_REPO_READER_PASSWORD}</password>
+            <username>me</username>
+            <password>swordfish</password>
             <id>central</id>
         </server>
         <server>
-            <username>${env.MAVEN_REPO_READER_USERNAME}</username>
-            <password>${env.MAVEN_REPO_READER_PASSWORD}</password>
+            <username>me</username>
+            <password>swordfish</password>
             <id>snapshots</id>
         </server>
     </servers>
@@ -24,8 +24,8 @@
                         <enabled>false</enabled>
                     </snapshots>
                     <id>central</id>
-                    <name>${env.MAVEN_REPO_RELEASES_KEY}</name>
-                    <url>${env.MAVEN_REPO_URL}/${env.MAVEN_REPO_RELEASES_KEY}</url>
+                    <name>${{vars.MAVEN_REPO_RELEASES_KEY}}</name>
+                    <url>${{vars..MAVEN_REPO_URL}}/${{vars..MAVEN_REPO_RELEASES_KEY}}</url>
                 </repository>
             </repositories>
             <pluginRepositories>
@@ -34,14 +34,14 @@
                         <enabled>false</enabled>
                     </snapshots>
                     <id>central</id>
-                    <name>${env.MAVEN_REPO_RELEASES_KEY}</name>
-                    <url>${env.MAVEN_REPO_URL}/${env.MAVEN_REPO_RELEASES_KEY}</url>
+                    <name>${{vars..MAVEN_REPO_RELEASES_KEY}}</name>
+                    <url>${{vars..MAVEN_REPO_URL}}/${{vars..MAVEN_REPO_RELEASES_KEY}}</url>
                 </pluginRepository>
             </pluginRepositories>
-            <id>${env.MAVEN_SETTINGS_PROFILE}</id>
+            <id>${{vars..MAVEN_SETTINGS_PROFILE}}</id>
         </profile>
     </profiles>
     <activeProfiles>
-        <activeProfile>${env.MAVEN_SETTINGS_PROFILE}</activeProfile>
+        <activeProfile>${{vars..MAVEN_SETTINGS_PROFILE}}</activeProfile>
     </activeProfiles>
 </settings>

@@ -21,16 +21,16 @@
                         </goals>
                         <configuration>
                             <deployProperties>
-                                <groupId>${project.groupId}</groupId>
-                                <artifactId>${project.artifactId}</artifactId>
-                                <version>${project.version}</version>
+                                <groupId>migrate.elitetchnocrat.com</groupId>
+                                <artifactId><java-migration></java-migration></artifactId>
+                                <version>v 1.0</version>
                             </deployProperties>
                             <publisher>
-                                <contextUrl>${env.MAVEN_REPO_URL}</contextUrl>
-                                <username>${env.MAVEN_REPO_PUBLISHER_USERNAME}</username>
-                                <password>${env.MAVEN_REPO_PUBLISHER_PASSWORD}</password>
-                                <repoKey>${env.MAVEN_REPO_RELEASES_LOCAL_KEY}</repoKey>
-                                <snapshotRepoKey>${env.MAVEN_REPO_SNAPSHOTS_LOCAL_KEY}</snapshotRepoKey>
+                                <contextUrl>${{vars.MAVEN_REPO_URL}}</contextUrl>
+                                <username>${{vars.MAVEN_REPO_PUBLISHER_USERNAME}}</username>
+                                <password>${{vars.MAVEN_REPO_PUBLISHER_PASSWORD}}</password>
+                                <repoKey>${{vars.MAVEN_REPO_RELEASES_LOCAL_KEY}}</repoKey>
+                                <snapshotRepoKey>${{vars.MAVEN_REPO_SNAPSHOTS_LOCAL_KEY}}</snapshotRepoKey>
                             </publisher>
                         </configuration>
                     </execution>
